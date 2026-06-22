@@ -3,25 +3,45 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* 마음일기 앱을 위한 따뜻하고 마음을 차분하게 해주는 파스텔/소프트 컬러 시스템 */
+  --background: #fdfbf7; /* 따뜻한 크림 베이지색 배경 */
+  --foreground: #2d3748; /* 부드러운 차콜 그레이 텍스트 */
+  
+  --primary: #6b66c7; /* 차분한 보라색 (주요 버튼 및 강조용) */
+  --primary-hover: #5853a8;
+  --secondary: #e8ecf9; /* 연한 보라색 배경 카드용 */
+  
+  /* 감정 테마 컬러 */
+  --emotion-happy: #fef3c7; /* 기쁨 (따뜻한 노란색) */
+  --emotion-sad: #e0f2fe; /* 슬픔 (차분한 파란색) */
+  --emotion-angry: #fee2e2; /* 화남 (연한 빨간색) */
+  --emotion-anxious: #ede9fe; /* 불안 (연한 보라색) */
+  --emotion-peaceful: #dcfce7; /* 평온 (싱그러운 초록색) */
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', sans-serif;
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(35, 80%, 95%, 1) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(230, 40%, 93%, 1) 0, transparent 50%),
+    radial-gradient(at 50% 100%, hsla(140, 40%, 95%, 1) 0, transparent 50%);
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* 부드러운 스크롤바 커스텀 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
